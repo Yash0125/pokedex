@@ -329,3 +329,14 @@ header form {
   display: flex;
   justify-content: center;
 }
+
+/* Search Page */
+
+.p-search {
+  margin-bottom: 30px;
+  font-size: 22px;
+}
+
+.p-search span {
+  font-weight: 700;
+}
