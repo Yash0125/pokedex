@@ -20,7 +20,7 @@ const Navigation = () => {
       <header className="container">
         <Link to="/" className="logo">
           <img
-            src="https://archives.bulbagarden.net/media/upload/4/4b/Pok%C3%A9dex_logo.png"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5pcjUKeo7grF0lGNE-oTwkYkAIM_i7pb0INatWeY6&s"
             alt="Logo Pokedex"
           />
         </Link>
