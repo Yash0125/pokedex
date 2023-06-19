@@ -108,3 +108,224 @@ header form {
   text-decoration: none;
   color: #006d77;
 }
+
+/* Btn Filter */
+.container-filter {
+  display: flex;
+}
+
+.icon-filter {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.icon-filter .icon {
+  width: 30px;
+  height: 30px;
+  stroke: #555;
+}
+
+
+/* Card List Pokemon */
+.card-list-pokemon {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card-pokemon {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.card-img {
+  background-color: #f2f2f2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  height: 250px;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.card-info {
+  padding: 15px;
+}
+
+.card-info h3 {
+  color: #333;
+}
+
+.pokemon-id {
+  display: block;
+  color: #888;
+  margin-bottom: 15px;
+}
+
+.card-types {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.card-types span {
+  font-size: 12px;
+  padding: 5px 20px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+/* Types of Pokemon */
+.water {
+  background-color: var(--color-water);
+}
+
+.grass {
+  background-color: var(--color-grass);
+}
+
+.poison {
+  background-color: var(--color-poison);
+}
+
+.fire {
+  background-color: var(--color-fire);
+}
+
+.bug {
+  background-color: var(--color-bug);
+}
+
+.dragon {
+  background: var(--color-dragon);
+}
+
+.flying {
+  background-color: var(--color-flying);
+}
+
+.ground {
+  background-color: var(--color-ground);
+}
+
+.steel {
+  background-color: var(--color-steel);
+}
+
+.psychic {
+  background-color: var(--color-psychic);
+}
+
+.ice {
+  background-color: var(--color-ice);
+}
+
+.ghost {
+  background-color: var(--color-ghost);
+}
+
+.normal {
+  background-color: var(--color-normal);
+}
+
+.rock {
+  background-color: var(--color-rock);
+}
+
+.electric {
+  background-color: var(--color-electric);
+}
+
+.fighting {
+  background-color: var(--color-fighting);
+}
+
+.fairy {
+  background-color: var(--color-fairy);
+}
+
+.dark {
+  background-color: var(--color-dark);
+}
+
+/* Container Filters */
+.container-filters {
+  display: flex;
+  justify-content: center;
+
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 250px;
+
+  color: #555;
+  background-color: #f2f2f2;
+  height: 100%;
+  padding-top: 140px;
+  transition: all 0.3s linear;
+}
+
+.container-filters.active {
+  left: 0;
+}
+
+.filter-by-type {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.filter-by-type span {
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.group-type {
+  display: flex;
+  gap: 10px;
+
+  margin-left: 15px;
+}
+
+.group-type label {
+  cursor: pointer;
+}
+
+/* Btn Load More */
+
+.container-btn-load-more {
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.btn-load-more {
+  border: none;
+  padding: 15px 40px;
+  font-family: inherit;
+  background-color: var(--color-primary);
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-load-more:hover {
+  background-color: var(--color-primary-hover);
+  color: #000;
+}
+.container-bookmark {
+  display: flex;
+  justify-content: center;
+}
