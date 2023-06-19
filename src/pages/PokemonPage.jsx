@@ -9,8 +9,14 @@ const PokemonPage = () => {
 
   const [loading, setLoading] = useState(true);
   const [pokemon, setPokemon] = useState({});
+  const [bookmarked, setBookmarked] = useState(false);
 
   const { id } = useParams();
+  const handleBookMark = () => {
+    setBookmarked((prevBookmarked) => !prevBookmarked);
+    console.log("bookmarked");
+  };
+
 
   const fetchPokemon = async (id) => {
     const data = await getPokemonByID(id);
@@ -21,6 +27,32 @@ const PokemonPage = () => {
   useEffect(() => {
     fetchPokemon(id);
   }, []);
+
+  useEffect(() => {
+    const bookmarkedPokemons =
+      JSON.parse(localStorage.getItem("bookmarkedPokemons")) || [];
+    const isBookmarked = bookmarkedPokemons.includes(id);
+    setBookmarked(isBookmarked);
+  }, [id]);
+
+  useEffect(() => {
+    const bookmarkedPokemons =
+      JSON.parse(localStorage.getItem("bookmarkedPokemons")) || [];
+    if (bookmarked) {
+      bookmarkedPokemons.push(id);
+    } else {
+      const index = bookmarkedPokemons.indexOf(id);
+      if (index !== -1) {
+        bookmarkedPokemons.splice(index, 1);
+      }
+    }
+    localStorage.setItem(
+      "bookmarkedPokemons",
+      JSON.stringify(bookmarkedPokemons)
+    );
+  }, [id, bookmarked]);
+
+
   return (
     <main className="container main-pokemon">
       {loading ? (
@@ -28,6 +60,9 @@ const PokemonPage = () => {
       ) : (
         <>
           <div className="header-main-pokemon">
+          <button className="btn-search" onClick={handleBookMark}>
+              {bookmarked ? "Remove from Bookmark" : "Add to Bookmark"}
+            </button>
             <span className="number-pokemon">#{pokemon.id}</span>
             <div className="container-img-pokemon">
               <img
