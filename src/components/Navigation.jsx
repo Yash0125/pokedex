@@ -9,9 +9,12 @@ const Navigation = () => {
 
   const onSearchSubmit = (e) => {
     e.preventDefault();
-    navigate("/search", {
-      state: valueSearch,
-    });
+    
+    if (valueSearch.trim() !== "") {
+      navigate("/search", {
+        state: valueSearch,
+      });
+    }
 
     onResetForm();
   };
